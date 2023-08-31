@@ -6,7 +6,7 @@
 	20230901_11H-13M-20S''324 ERROR: Apple did not start in the system. 
 	20230901_11H-13M-21S''123 INFO: System restart failed. Attempting to reestablish conneciton...
 	20230901_11H-13M-22S''100 INFO: System restarted successfully.
-	20230901_11H-14M-23S''501 ERROR: Apple successfully connected. 
+	20230901_11H-14M-23S''501 INFO: Apple successfully connected. 
 	20230901_11H-14M-24S''501 DEBUG: A keyword is not supposed to be here: Banana
 	20230901_11H-14M-25S''510 DEBUG: A keyword is not supposed to be here: Banana
 
@@ -29,18 +29,32 @@
 			i. Tabulated
 			ii. 
 				- Options: 
-					{
+					Operations {
+						# Output
+						set <path>: set path to output generated logs
+						
+						# Keywords
 						add <keyword>: add keyword, 
 					    delete <keyword>: delete keyword, 
-						set <path>: set path
-						start: start program
-						pause: pause program
+						load <path to keywords>: load keywords
+						save <path>: save current set of keywords
+						
+						frequency: set intervals of generating logs
+						start: start program,
+						pause: pause program,
 						reset: clear logs
 					}
-				- Path: <Path to save logs>
-				- Keywords: {List of Keywords}
-				- Log Status: {Not Started, Running, Paused}
 
+				- Path: <Path to save logs>
+
+				- Keywords: { List of Keywords }
+
+				- Logging Status: { 
+						Frequency, 
+						Not Started, 
+						Running, 
+						Paused 
+					}
 '
 
 @startuml
