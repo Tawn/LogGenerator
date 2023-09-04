@@ -10,6 +10,9 @@ repeat
 
 	group menu
 		:Actions
+		set /path/to/load/set_of/loggers/<filename>.txt
+		set /path/to/load/keywords/<filename>.txt
+		save /path/to/save/dummy/logs/<output name>.txt
 		add keyword1 keyword2 ...
 		del keyword1 keyword2 ...
 		freq <#>ms
