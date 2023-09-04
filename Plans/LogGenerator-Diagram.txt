@@ -18,13 +18,17 @@ repeat
 	end group
 
 	' 3) Display Setup '
-	group Program
+	group Program Setup
 		:IO
 		Load Dummy Loggers: /path/to/load/dummy/loggers/<filename>.txt
 		Load Keywords: /path/to/load/keywords/<filename>.txt
 		Save to: /path/to/save/dummy/logs/<output name>.txt;
 		:Keywords
 		Apple, Banana, Orange, Peach, Mango, ...;
+	end group 
+
+	' 4) Display Program Status '
+	group Program Status 
 		:Status
 		Program: Stopped/Started
 		Frequency: #ms/s/min
