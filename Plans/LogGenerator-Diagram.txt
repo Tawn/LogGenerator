@@ -1,9 +1,38 @@
 @startuml
-object London
+!pragma useVerticalIf on
 
-map CapitalCity {
- UK *-> London
- USA => Washington
- Germany => Berlin
-}
+' 1) Executing Program '
+start 
+	:LogGenerate;
+
+' 2) Display Menu '
+repeat
+group menu
+	:Actions
+	add keyword1 keyword2 ...
+	del keyword1 keyword2 ...
+	freq <#>ms
+	start
+	stop;
+end group
+
+' 3) Display Setup '
+group Program Setup
+	:IO
+	Load Dummy Loggers: /path/to/load/dummy/loggers/<filename>.txt
+	Load Keywords: /path/to/load/keywords/<filename>.txt
+	Save to: /path/to/save/dummy/logs/<output name>.txt;
+	:Keywords
+	Apple, Banana, Orange, Peach, Mango, ...;
+	:Status
+	Program: Stopped/Started
+	Frequency: #ms/s/min
+	Count: # of logs generated;
+end group
+
+repeatwhile (ctrl+c to stop) is (Running)
+
+
+->ctrl+c (Exit);
+stop 
 @enduml
